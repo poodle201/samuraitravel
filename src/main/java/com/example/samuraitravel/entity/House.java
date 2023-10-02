@@ -19,8 +19,11 @@ public class House {
 	@Column(name = "id")
 	private Integer id;
 	
+	@Column(name = "name")	
+	private String name;
+	
 	@Column(name = "image_name")
-	private Integer imageName;
+	private String imageName;
 	
 	@Column(name = "description")
 	private String description;
