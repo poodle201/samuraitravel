@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 	<head>
         <div th:replace="~{fragment::meta}"></div>     
         <div th:replace="~{fragment::styles}"></div>
@@ -21,7 +21,7 @@
 							<h1 class="mb-4 text-center" th:text="${house.getName()}"></h1>
 							<div class="d-flex justify-content-end align-items-end mb-3">
 								<div>
-									<a href="#">編集</a>
+									<a th:href="@{/admin/houses/__${house.getId()}__/edit}">編集</a>
 								</div>
 							</div>
 							<div class="mb-3">
