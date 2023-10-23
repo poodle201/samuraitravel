@@ -33,3 +33,7 @@ build/
 .vscode/
 
 SpringBoot教材_成果物用ファイル/
+
+/src/main/resources/application.properties
+
+
