@@ -42,7 +42,7 @@ public class StripeWebhookController {
 		}
 		
 		if ("checkout.session.completed".equals(event.getType())) {
-//			System.out.println("processSessionCompletedを呼び出します");
+			System.out.println("processSessionCompletedを呼び出します");
             stripeService.processSessionCompleted(event);
         }
 		

@@ -74,7 +74,7 @@ public class StripeService {
 		System.out.println("processSessionCompletedが呼び出されました");
 		Optional<StripeObject> optionalStripeObject = event.getDataObjectDeserializer().getObject();
 		
-//		System.out.println("ラムダ式を実行します");
+		System.out.println("ラムダ式を実行します");
 		optionalStripeObject.ifPresent(stripeObject -> {
 			Session session = (Session)stripeObject;
 			SessionRetrieveParams params = SessionRetrieveParams.builder().addExpand("payment_intent").build();
@@ -83,12 +83,12 @@ public class StripeService {
 				session = Session.retrieve(session.getId(), params, null);
 				Map<String, String> paymentIntentObject = session.getPaymentIntentObject().getMetadata();
 				reservationService.create(paymentIntentObject);
-//				System.out.println("create実行されました");
+				System.out.println("create実行されました");
 			}catch(StripeException e) {
 				e.printStackTrace();
-//				System.out.println("実行されませんでした");
+				System.out.println("実行されませんでした");
 			}			
 		});
-//		System.out.println("ラムダ式の実行を終了しました");
+		System.out.println("ラムダ式の実行を終了しました");
 	}
 }
